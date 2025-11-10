@@ -16,10 +16,11 @@ def load_swipestatsflirting():
     return df
 
 def load_neutral_to_flirty():
-    df = pd.read_csv("data\\raw\\neutralandflirting.csv")
+    df = pd.read_csv("data\\raw\\generation.csv")
     return df
 
 tinder_df= load_tinderflirting()
 swipestats_df = load_swipestatsflirting()
-withneutral_df = load_neutral_to_flirty()
 withemoji_df = load_flirty_or_not()
+
+neutral_to_flirty_df = load_neutral_to_flirty()

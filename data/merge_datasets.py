@@ -7,8 +7,8 @@ def remove_duplicates(df):
     print(f"Removed {initial_size - len(df)} duplicates")
     return df
 
-def merge_detection_data(df1, df2, df3, df4):
-    dfs = [df1, df2, df3, df4]
+def merge_detection_data(df1, df2, df3):
+    dfs = [df1, df2, df3]
     
     for i, df in enumerate(dfs):
         if 'text' not in df.columns or 'label' not in df.columns:

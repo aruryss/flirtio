@@ -15,5 +15,4 @@ Train size: 2758
 Val size: 592
 Test size: 592
 
-all processed data is in: data\\processed -- and is already spread for detection
-i guess we need additional data for generation but i not sure, if needed you can run the same preprocessing on it as well
+all processed data is in: data\\processed
