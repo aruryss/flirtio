@@ -7,10 +7,8 @@ __pycache__/
 env/
 venv/
 *.egg-info/
-data/raw/*.csv
 data/raw/*.json
 data/raw/*.parquet
-data/processed/*.csv
 data/processed/*.pkl
 data/processed/*.json
 models/
