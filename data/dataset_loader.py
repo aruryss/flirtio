@@ -1,10 +1,5 @@
 """
 Dataset loading functions.
-
-Loads datasets from HuggingFace Hub:
-- ieuniversity/flirty_or_not
-- aidanzhou/tinderflirting  
-- ieuniversity/neutral_to_flirty
 """
 import pandas as pd
 

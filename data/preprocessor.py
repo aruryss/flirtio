@@ -1,67 +1,31 @@
-"""
-Text preprocessing functions.
-
-Handles:
-- Text cleaning (URLs, mentions, normalization)
-- Tokenization
-- Sequence creation
-- Padding
-"""
-
 import re
-import string
-
+import numpy as np
 
 def clean_text(text):
-    """
-    Clean and normalize text.
-    
-    Args:
-        text (str): Raw text
-        
-    Returns:
-        str: Cleaned text
-    """
-    pass
-
+    if not isinstance(text, str):
+        return ""
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip().lower()
 
 def tokenize_text(text):
-    """
-    Tokenize text into words.
-    
-    Args:
-        text (str): Input text
-        
-    Returns:
-        list: List of tokens
-    """
-    pass
-
+    return text.split()
 
 def create_sequences(texts, word_to_idx):
-    """
-    Convert texts to integer sequences.
-    
-    Args:
-        texts (list): List of text strings
-        word_to_idx (dict): Word to index mapping
-        
-    Returns:
-        list: List of integer sequences
-    """
-    pass
+    oov_idx = word_to_idx.get('<OOV>', 3)
+    sequences = []
+    for text in texts:
+        tokens = tokenize_text(text)
+        seq = [word_to_idx.get(token, oov_idx) for token in tokens]
+        sequences.append(seq)
+    return sequences
 
-
-def pad_sequences(sequences, maxlen, padding='post'):
-    """
-    Pad sequences to uniform length.
-    
-    Args:
-        sequences (list): List of integer sequences
-        maxlen (int): Maximum sequence length
-        padding (str): 'pre' or 'post'
-        
-    Returns:
-        np.ndarray: Padded sequences
-    """
-    pass
+def pad_sequences(sequences, maxlen, padding='post', value=0):
+    padded = np.full((len(sequences), maxlen), value, dtype=np.int32)
+    for i, seq in enumerate(sequences):
+        if len(seq) == 0:
+            continue
+        if padding == 'post':
+            padded[i, :min(len(seq), maxlen)] = seq[:maxlen]
+        else:
+            padded[i, max(0, maxlen-len(seq)):] = seq[-maxlen:]
+    return padded
