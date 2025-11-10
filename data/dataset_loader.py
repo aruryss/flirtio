@@ -6,36 +6,25 @@ Loads datasets from HuggingFace Hub:
 - aidanzhou/tinderflirting  
 - ieuniversity/neutral_to_flirty
 """
-
-from datasets import load_dataset
 import pandas as pd
 
-
 def load_flirty_or_not():
-    """
-    Load ieuniversity/flirty_or_not dataset.
-    
-    Returns:
-        pd.DataFrame: DataFrame with 'text' and 'label' columns
-    """
-    pass
-
+    df = pd.read_csv("data\\raw\\emojiflirting.csv")
+    return df
 
 def load_tinderflirting():
-    """
-    Load aidanzhou/tinderflirting dataset.
-    
-    Returns:
-        pd.DataFrame: DataFrame with 'text' and 'label' columns
-    """
-    pass
+    df = pd.read_csv("data\\raw\\tinderflirting.csv")
+    return df
 
+def load_swipestatsflirting():
+    df = pd.read_csv("data\\raw\\swipestatsflirting.csv")
+    return df
 
 def load_neutral_to_flirty():
-    """
-    Load ieuniversity/neutral_to_flirty dataset.
-    
-    Returns:
-        pd.DataFrame: DataFrame with 'non-flirty' and 'flirty' columns
-    """
-    pass
+    df = pd.read_csv("data\\raw\\neutralandflirting.csv")
+    return df
+
+tinder_df= load_tinderflirting()
+swipestats_df = load_swipestatsflirting()
+withneutral_df = load_neutral_to_flirty()
+withemoji_df = load_flirty_or_not()
