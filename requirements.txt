@@ -20,3 +20,12 @@ tqdm>=4.65.0
 
 # Testing
 pytest>=7.4.0
+
+
+# Flirt detection model
+transformers
+torch
+scikit-learn
+pandas
+numpy
+jupyter

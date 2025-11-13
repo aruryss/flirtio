@@ -1,0 +1,20 @@
+{
+  "name": "conservative_stable",
+  "model_name": "distilbert-base-uncased",
+  "learning_rate": 2e-05,
+  "batch_size": 16,
+  "dropout": 0.2,
+  "warmup_steps": 100,
+  "epochs": 6,
+  "max_length": 128,
+  "weight_decay": 0.01,
+  "freeze_bert": false,
+  "notes": "Safe baseline - should reach 80-85% easily",
+  "best_train_accuracy": 0.8068487879953828,
+  "final_train_accuracy": 0.8068487879953828,
+  "best_val_accuracy": 0.7953321364452424,
+  "best_val_f1": 0.7936357072402268,
+  "best_val_precision": 0.8051067544333541,
+  "best_val_recall": 0.7953321364452424,
+  "overfitting_gap": 0.011516651550140478
+}
