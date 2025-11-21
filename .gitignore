@@ -12,12 +12,10 @@ data/raw/*.parquet
 data/processed/*.pkl
 data/processed/*.json
 models/
-*.h5
 *.pt
 *.pth
 *.bin
 .ipynb_checkpoints/
-*.ipynb
 .vscode/
 .idea/
 *.swp
