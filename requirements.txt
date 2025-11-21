@@ -29,3 +29,7 @@ scikit-learn
 pandas
 numpy
 jupyter
+
+# Generation
+tensorflow
+openai
