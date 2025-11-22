@@ -31,11 +31,11 @@ class FlirtReplyGenerator:
         self.project_root = project_root or Path(__file__).resolve().parents[1]
 
         # paths
-        gen_dir = self.project_root / "flirt-generation"
+        gen_dir = self.project_root 
         self.weights_path = gen_dir / Path(cfg.model_paths.generation_weights)
         self.input_tok_path = gen_dir / Path(cfg.model_paths.input_tokenizer)
         self.target_tok_path = gen_dir / Path(cfg.model_paths.target_tokenizer)
-        self.data_path = gen_dir / "augmented-data" / "detection_train_augmented_with_replies.csv"
+        self.data_path = gen_dir / "flirt_generation" / "augmented-data" / "detection_train_augmented_with_replies.csv"
 
         # lazy-initialized attributes
         self.input_tokenizer = None

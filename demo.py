@@ -1,11 +1,13 @@
 from pathlib import Path
+import sys
 import argparse
 import torch
 
 from utils.config import load_config
 from utils.logger import setup_logger
 from generation.generate import FlirtReplyGenerator
-from flirt_detection.model import FlirtDetectionModel, FlirtDetectionTokenizer
+from flirt_detection.src.detection.model import FlirtDetectionModel, FlirtDetectionTokenizer
+
 
 logger = setup_logger("demo")
 
@@ -17,7 +19,7 @@ def load_detection(cfg):
     device = torch.device(cfg.device)
     model = FlirtDetectionModel.load_model(str(ckpt_path), device=str(device))
 
-    from pathlib import Path
+    # from pathlib import Path
     import json
 
     best_cfg_path = project_root / "best_configuration.json"
