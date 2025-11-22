@@ -1,0 +1,9 @@
+device: "cuda"
+max_gen_len: 20
+flirty_threshold: 0.5
+
+model_paths:
+  detection_ckpt: "flirt-detection/models/flirt_detection_model.pt"
+  generation_weights: "flirt-generation/flirty_response_model.h5"
+  input_tokenizer: "flirt-generation/input_tokenizer.pkl"
+  target_tokenizer: "flirt-generation/target_tokenizer.pkl"
